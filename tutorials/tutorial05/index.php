@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Months</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <form action="result.php" method="POST">
-                <select name="month" value="select" id="month">
+                <select name="month" value="select" id="month" required>
                     
+                    <option value="">---Select Month---</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
                     <option value="3">March</option>

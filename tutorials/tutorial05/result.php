@@ -4,6 +4,7 @@
     // echo "</pre>";
 
     $m = $_POST["month"];
+    echo "You have selected"
 ?>
 
 <!DOCTYPE html>

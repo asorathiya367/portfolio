@@ -6,7 +6,7 @@
         $n = $_POST['n'];
         $r = $_POST['r'];
         $i = ($p*$n*$r)/100;
-        echo $i;
+        echo "Simple Interest is: ".$i;
     }
 
 ?>

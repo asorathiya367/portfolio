@@ -29,7 +29,7 @@
             document.getElementById("result_age").innerHTML = resyear + " years " + resmonth + " months " + resdate + " days";
         }
     </script>
-    <title>Days Calculator</title>
+    <title>Simple Interest</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <form action="result.php" method="post">
                         <p>Enter principal</p>
-                         <input name="p" type="text" placeholder="principal" class="form-control mb-2">
+                         <input name="p" type="text" placeholder="principal" class="form-control mb-2" required>
                         <p>Enter No of year</p>
                          <input name="n" type="text" placeholder="time" class="form-control mb-2">
                          <p>Enter Rate of intresset</p>
