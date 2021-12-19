@@ -9,6 +9,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <style>
+        img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+display: none;}
+    </style>
     <script>
         function calculate() {
             var date = new Date();
@@ -42,11 +46,11 @@
                     <div class="card-body">
                         <form action="result.php" method="post">
                         <p>Enter principal</p>
-                         <input name="p" type="text" placeholder="principal" class="form-control mb-2" required>
+                         <input name="p" type="number" placeholder="principal" class="form-control mb-2" required>
                         <p>Enter No of year</p>
-                         <input name="n" type="text" placeholder="time" class="form-control mb-2">
+                         <input name="n" type="number" placeholder="time" class="form-control mb-2">
                          <p>Enter Rate of intresset</p>
-                         <input name="r" type="text" placeholder="rate of interesset" class="form-control mb-2">
+                         <input name="r" type="number" placeholder="rate of interesset" class="form-control mb-2">
                          <div class="row justify-content-center">
                              <div class="col-3">
                                  <button name="cal" class="btn btn-primary mb-2">Calculate</button>
