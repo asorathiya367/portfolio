@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<!-- asd -->
+    <title>Edit & Delete</title>
+    
+</head>
+
+<body>
+
+    <div class="container mb-3 mt-3">
+        <table class="table table-striped table-bordered" id="myTable" style="width: 100%">
+            <thead class="table-dark">
+                <tr>
+                    <td><b>No</b></td>
+                    <td><b>Name</b></td>
+                    <td><b>Email</b></td>
+                    <td><b>Age</b></td>
+                    <td><b>State</b></td>
+                    <td><b>City</b></td>
+                    <td><b>Action</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="tab_1">
+                    <td>1</td>
+                    <td>Akshay</td>
+                    <td>asorathiya367@rku.ac.in</td>
+                    <td>21</td>
+                    <td>Gujarat</td>
+                    <td>Rajkot</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+                        <button type="button" id="btn1" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                <tr id="tab_2">
+                    <td>2</td>
+                    <td>Fenil</td>
+                    <td>fbabariya706@gmail.com</td>
+                    <td>21</td>
+                    <td>Gujarat</td>
+                    <td>Rajkot</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+                        <button type="button" id="btn2" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                <tr id="tab_3">
+                    <td>3</td>
+                    <td>abhu</td>
+                    <td>abambhaniya@gmail.com</td>
+                    <td>19</td>
+                    <td>Rajasthan</td>
+                    <td>Udaipur</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+                        <button type="button" id="btn3" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                <tr id="tab_4">
+                    <td>4</td>
+                    <td>Devang</td>
+                    <td>damrutiya@gmail.com</td>
+                    <td>19</td>
+                    <td>Gujarat</td>
+                    <td>junagadh</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+                        <button type="button" id="btn4" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                <tr id="tab_5">
+                    <td>5</td>
+                    <td>Kishna</td>
+                    <td>ksakhiya@gmial.com</td>
+                    <td>22</td>
+                    <td>Gujarat</td>
+                    <td>Upleta</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Edit</button>&nbsp;
+                        <button type="button" id="btn5" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+$(document).ready(function()
+        {
+            $("#btn1").click(function()
+            {
+                $("#tab_1").hide();
+            });
+            $("#btn2").click(function()
+            {
+                $("#tab_2").hide();
+            });
+            $("#btn3").click(function()
+            {
+                $("#tab_3").hide();
+            });
+            $("#btn4").click(function()
+            {
+                $("#tab_4").hide();
+            });
+            $("#btn5").click(function()
+            {
+                $("#tab_5").hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
