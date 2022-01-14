@@ -2,28 +2,48 @@
   session_start();  
 
 
-  if(isset($_POST['login']))   // it checks whether the user clicked login button or not 
+  if(isset($_COOKIE['username']))   // it checks whether the user clicked login button or not 
   {
-       $user = $_POST['username'];
-       $pass = $_POST['password'];
+       $valuser = $_COOKIE['username'];
+       $valpass = $_COOKIE['password'];
+       $checked = "checked";
+  }else{
+      $valuser = "";
+      $valpass = "";
+      $checked = "";
+  }
 
 
-       if(isset($_SESSION['username']))   // Checking whether the session is already there or not
+       if(isset($_POST['login']))   // Checking whether the session is already there or not
        {
-            $valuser=$_SESSION['username'];
-            $valpass=$_SESSION['password'];
-            
-            if(($user == $valuser)  && ($pass == $valpass))
+            $user=$_POST['username'];
+            $pass=$_POST['password'];
+            if(isset($_SESSION['username']))
             {
+                $valuser=$_SESSION['username'];
+                $valpass=$_SESSION['password'];
+            
+                if(($user == $valuser)  && ($pass == $valpass))
+                {
 
-                //echo '<script type="text/javascript"> window.open("index.php","_blank");</script>';    //  On Successful Login redirects to index.php
-	header("location:index.php");
+                echo '<script type="text/javascript"> window.open("index.php","_blank");</script>';    //  On Successful Login redirects to index.php
+	            // header("location:index.php");
+                //Set Cookie Code
+                if(isset($_POST['rememberme']))
+                {
+                    setcookie('username',$user,time()+3600247);
+                    setcookie('password',$pass,time()+3600247);
+                }else
+                {
+                    setcookie('username',$user,time()-1);
+                    setcookie('password',$pass,time()-1);
+                }
             }
             else
             {
                 echo '<script type="text/javascript"> alert("Invalid Username Or Password");</script>';        
             }
-        }
+       }
         else
         {
                 echo '<script type="text/javascript">
@@ -31,16 +51,7 @@
                            window.open("registration.php","_blank");
                       </script>';             
         }
-        if (!empty($_POST['rememberme'])) 
-        {  
-            $remember=$_POST['rememberme'];
-
-            setcookie('username',$user,time()+3600*24*7);
-            setcookie('password',$pass,time()+3600*24*7);  
-            setcookie('rememberme',$remember,time()+3600*24*7);
-        }
-      
-}
+    }
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +100,7 @@ display: none;}
                                 </div>
                                 <div class="col-md-8">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="rememberme" id="rememberme" >
+                                        <input class="form-check-input" type="checkbox" value="1" <?=$checked?> name="rememberme" id="rememberme" >
                                         Remember Me        
                                     </div>
                                 </div>
