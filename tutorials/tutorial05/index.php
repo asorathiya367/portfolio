@@ -37,7 +37,7 @@ display: none;}
                         </select>
                         <div class="row justify-content-center">
                              <div class="col-3">
-                                 <button name="cal" class="btn btn-primary mt-3">Calculate</button>
+                                 <button name="cal" class="btn btn-primary mt-3">Submit</button>
                                 </div>
                             </div>
                     

@@ -19,11 +19,19 @@
        else
        {
             echo 'Welcome To Home Page...'.$_SESSION['username'];
+            if(isset($_SESSION['username'])){
+                $username=$_SESSION['username'];
+                $age=$_SESSION['age'];
+                $country=$_SESSION['country'];
+                $state=$_SESSION['state'];
+                $city=$_SESSION['city'];
+            }
 
           //echo '<script type="text/javascript"> alert("Login Successfully..."); </script>';
 
             echo "</br><a href='logout.php'>Click Here To Logout</a> "; 
        }
+
 
         
 ?>
@@ -68,11 +76,11 @@ display: none;}
             <tbody>
                 <tr id="tab_1">
                     <td>1</td>
-                    <td><?php echo $_SESSION['username'];?></td>
-                    <td><?php echo $_SESSION['age'];?></td>
-                    <td><?php echo $_SESSION['country'];?></td>
-                    <td><?php echo $_SESSION['state'];?></td>
-                    <td><?php echo $_SESSION['city'];?></td>
+                    <td><?=$username?></td>
+                    <td><?=$age?></td>
+                    <td><?=$country?></td>
+                    <td><?=$state?></td>
+                    <td><?=$city?></td>
                     <td>
                         <button type="button" class="btn btn-danger"><a href='logout.php' style="color:white;">Logout</a></button>
                     </td>
