@@ -1,14 +1,8 @@
-<!-- <?php   
+<?php   
 
     session_start();
 
 ?>
-
-<html>
-  <head>
-       <title> Home </title>
-  </head>
-<body>
 
 <?php
 
@@ -18,7 +12,7 @@
        }
        else
        {
-            echo 'Welcome To Home Page...'.$_SESSION['username'];
+            // echo 'Welcome To Home Page...'.$_SESSION['username'];
             if(isset($_SESSION['username'])){
                 $username=$_SESSION['username'];
                 $age=$_SESSION['age'];
@@ -28,15 +22,9 @@
             }
 
           //echo '<script type="text/javascript"> alert("Login Successfully..."); </script>';
-
-            echo "</br><a href='logout.php'>Click Here To Logout</a> "; 
-       }
-
-
-        
+            // echo "</br><a href='logout.php'>Click Here To Logout</a> ";  
+       }        
 ?>
-</body>
-</html> -->
 <!doctype html>
 <html lang="en">
 
@@ -57,7 +45,6 @@ display: none;}
     </style>
     
 </head>
-
 <body>
 
     <div class="container mb-3 mt-3">
