@@ -1,5 +1,14 @@
 <?php
 require 'db.php';
+
+session_start();
+if(isset($_SESSION['message']))
+{
+    echo $_SESSION['message'];
+    unset($_SESSION['message']);    
+}
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,34 +33,43 @@ display: none;}
 <body>
 
     <div class="container mb-3 mt-3">
+    <a class="link-primary" href="registration.php"><h5>Insert Data</h5></a>
         <table class="table table-striped table-bordered" id="myTable" style="width: 100%">
             <thead class="table-dark">
                 <tr>
                     <td><b>Id</b></td>
                     <td><b>Name</b></td>
+                    <td><b>Profile</b></td>
                     <td><b>Email</b></td>
                     <td><b>Enroll No</b></td>
                     <td><b>Contact No</b></td>
+                    <td><b>Action</b></td>
                 </tr>
             </thead>
-            <tbody>
             <?php
-            $sql = "select * from std_info";
+            $sql = "select id,upper(name) as name,email,upper (enrollno) as enrollno,contactno,profile from std_info";
             $result = $db->query($sql);
+            $count = 1;
             while($row = $result-> fetch_assoc()){
-
+        
             ?>
+                <tbody>
                     <tr id="tab_1">
-                        <td><?=$row['id']?></td>
+                        <td><?=$count++;?></td>
                         <td><?=$row['name']?></td>
+                        <td><img src="img/<?= $row['profile'];?> " width="70" height="60"></td>
                         <td><?=$row['email']?></td>
                         <td><?=$row['enrollno']?></td>
                         <td><?=$row['contactno']?></td>
+                        <td>
+                            <!-- <button class="btn btn-primary"><a class="text-white" href="registration.php?id=<?php echo $row['id'];?>">Edit</a></button> -->
+                            <button class="btn btn-danger"><a class="text-white" onclick="return confirm('Do you want to Delete?');" href="user_delete.php?id=<?php echo $row['id'];?>">Delete</a></button>
+                        </td>
                         </tr>
+                        </tbody>
                 <?php
                 }
                 ?>
-            </tbody>
 
         </table>
     </div>
